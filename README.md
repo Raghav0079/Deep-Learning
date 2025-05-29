@@ -108,7 +108,78 @@ Contributions are welcome! If you find any issues or have improvements, feel fre
 ## Notebook
 https://colab.research.google.com/drive/12nEZssycFp_I87bPmS6YFwqW1sEtZIdy?usp=drive_link
 
+# Hugging Face Transformers and Diffusers Examples
 
+This notebook demonstrates various applications of the Hugging Face `transformers` and `diffusers` libraries. It covers text summarization, machine translation, question answering, and image generation using different pre-trained models.
 
+## Setup
+
+To run this notebook, you need to install the necessary libraries. This can be done by running the following commands in the notebook cells:
+
+- `transformers`: Provides access to pre-trained models for various NLP tasks.
+- `torch`: The deep learning framework used by the models.
+- `accelerate`: Helps in optimizing the training and inference of large models.
+- `diffusers`: Provides access to state-of-the-art diffusion models for image generation.
+- `opencv-python`: Used for saving image frames and creating videos.
+
+## Examples
+
+The notebook includes the following examples:
+
+### 1. Text Summarization
+
+This section demonstrates how to use the `facebook/bart-large-cnn` model for text summarization.
+
+- **Model:** `facebook/bart-large-cnn`
+- **Task:** Summarizes a given text input.
+
+The code loads the tokenizer and model, encodes the input text, and generates a summary.
+
+### 2. Machine Translation
+
+This section shows how to use the `t5-small` model for English to Spanish translation.
+
+- **Model:** `t5-small` (Smaller versions like `t5-base` or `t5-large` can be used for better results)
+- **Task:** Translates text from English to Spanish.
+
+The code loads the tokenizer and model, encodes the input text with the translation task prefix, and generates the translated text.
+
+### 3. Question Answering
+
+This section demonstrates using the `bert-large-uncased-whole-word-masking-finetuned-squad` model to answer questions based on a given context.
+
+- **Model:** `bert-large-uncased-whole-word-masking-finetuned-squad`
+- **Task:** Extracts an answer to a question from a provided text context.
+
+The code tokenizes the question and context, runs the model to get start and end logits, and extracts the most probable answer span from the context.
+
+### 4. Image Generation with Stable Diffusion
+
+This section showcases image generation using the `CompVis/stable-diffusion-v1-4` and `runwayml/stable-diffusion-v1-5` models from the `diffusers` library.
+
+- **Models:** `CompVis/stable-diffusion-v1-4` and `runwayml/stable-diffusion-v1-5`
+- **Task:** Generates images based on a text prompt.
+
+The code loads the pipeline, sets the device to CUDA if available for faster generation, and generates an image from a text prompt. The generated image is saved as a PNG file.
+
+### 5. Generating Multiple Images for Video Creation
+
+This section extends the image generation example to create multiple frames that can be later assembled into a video.
+
+- **Model:** `runwayml/stable-diffusion-v1-5`
+- **Task:** Generates a sequence of images from a text prompt.
+
+The code iterates to generate multiple images, saves each image as a PNG file, and then uses OpenCV to create a video file from the saved frames.
+
+## Usage
+
+Run each cell in the notebook sequentially to execute the examples. The output of each task will be printed or saved as a file in the notebook environment.
+
+## Requirements
+
+- Python 3.7 or higher
+- Google Colab or a local environment with Python, PyTorch, and the installed libraries.
+
+### Notebook 
 
 https://colab.research.google.com/drive/1EACO0FGWonlacyQ3yMTWAebdFl_MKNKh?usp=sharing
