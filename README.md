@@ -15,7 +15,6 @@ This repository contains a Google Colab notebook showcasing various machine lear
     *   [Text Generation with RNNs](#text-generation-with-rnns)
     *   [COCO Dataset Download](#coco-dataset-download)
 4.  [Contributing](#contributing)
-5.  [Notebook] 
 
 ## Project Overview
 
